@@ -19,7 +19,7 @@ export default function Splash() {
 }
 
 async function getTodos() {
-  const res = await fetch("https://jsonplaceholder.typicode.com/todos/");
+  const res = await fetch("http://localhost:3000/posts");
   const data = await res.json();
   console.log(data);
   return data;
