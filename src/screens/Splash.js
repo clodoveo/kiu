@@ -1,9 +1,7 @@
 import React from "react";
-import { useQuery, useQueryClient } from "react-query";
 
 export default function Splash() {
   // Queries
-  const query = useQuery("todos", getTodos);
 
   return (
     <div
@@ -13,14 +11,7 @@ export default function Splash() {
         backgroundColor: "#999"
       }}
     >
-      {query.data && query.data.map((i) => <ul key={i.id}>{i.title}</ul>)}
+      splash
     </div>
   );
-}
-
-async function getTodos() {
-  const res = await fetch("http://localhost:3000/posts");
-  const data = await res.json();
-  console.log(data);
-  return data;
 }
